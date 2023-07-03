@@ -1,5 +1,3 @@
-package com.example;
-
 public class CocheElectrico extends Coche {
     String motorElectrico;
 
