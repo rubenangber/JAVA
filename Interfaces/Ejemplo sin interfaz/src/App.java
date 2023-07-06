@@ -6,7 +6,7 @@ public class App {
         List<Empleado> listaEmpleados = new ArrayList<Empleado>();
         EmpleadoCRUD empleadoCRUD = new EmpleadoCRUD();
         
-        Empleado Juanito = new Empleado("Juanito", 30, 40, true);
+        Empleado Juanito = new Empleado("Juanito", 30, 40, true); 
         Empleado Patricia = new Empleado("Patricia", 30, 40, true);
         Empleado Roberto = new Empleado("Roberto", 30, 40, true);
 

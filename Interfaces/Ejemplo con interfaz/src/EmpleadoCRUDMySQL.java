@@ -15,4 +15,5 @@ public class EmpleadoCRUDMySQL implements EmpleadoCRUD {
     public void delete(Empleado empleado){
         empleados.remove(empleado);
     }
+    
 }

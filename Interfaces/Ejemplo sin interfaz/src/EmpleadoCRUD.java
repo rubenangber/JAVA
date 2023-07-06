@@ -12,4 +12,5 @@ public class EmpleadoCRUD {
     public List<Empleado>verEmpleados() {
         return empleados;
     }
+    
 }
