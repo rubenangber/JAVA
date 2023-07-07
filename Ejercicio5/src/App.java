@@ -15,5 +15,6 @@ public class App {
         cocheCRUD.delete("Ferrari");
         lista = cocheCRUD.findAll();
         System.out.println(lista);
+        
     }
 }

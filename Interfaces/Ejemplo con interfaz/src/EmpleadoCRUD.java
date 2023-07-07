@@ -7,5 +7,4 @@ public interface EmpleadoCRUD {
     List<Empleado> findAll();
 
     void delete(Empleado empleado);
- 
 }
