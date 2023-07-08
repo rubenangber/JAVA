@@ -1,2 +1,2 @@
 # JAVA
-OpenBootcamp de Java
+Apuntes y ejercios de OpenBootcamp de Java básico
