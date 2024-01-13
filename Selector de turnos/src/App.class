@@ -1,0 +1,68 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Calendar;
+import java.util.Random;
+import java.util.Scanner;
+
+public class App {
+   public App() {
+   }
+
+   public static void main(String[] var0) throws Exception {
+      Scanner var1 = new Scanner(System.in);
+      String[] var2 = new String[]{"Paula", "Marta", "Rub\u00c3\u00a9n", "Marina"};
+      Random var3 = new Random();
+      Calendar var4 = Calendar.getInstance();
+      int var5 = var4.get(2) + 1;
+      switch (var5) {
+         case 1:
+            System.out.println("ENERO DUMP");
+            break;
+         case 2:
+            System.out.println("FEBRERO DUMP");
+            break;
+         case 3:
+            System.out.println("MARZO DUMP");
+            break;
+         case 4:
+            System.out.println("ABRIL DUMP");
+            break;
+         case 5:
+            System.out.println("MAYO DUMP");
+            break;
+         case 6:
+            System.out.println("JUNIO DUMP");
+            break;
+         case 7:
+            System.out.println("JULIO DUMP");
+            break;
+         case 8:
+            System.out.println("AGOSTO DUMP");
+            break;
+         case 9:
+            System.out.println("SEPTIEMBRE DUMP");
+            break;
+         case 10:
+            System.out.println("OCTUBRE DUMP");
+            break;
+         case 11:
+            System.out.println("NOVIEMBRE DUMP");
+            break;
+         case 12:
+            System.out.println("DICIEMBRE DUMP");
+      }
+
+      int var6 = 0;
+
+      do {
+         int var7 = var3.nextInt(var2.length);
+         if (var2[var7] != "x") {
+            var1.nextLine();
+            System.out.printf("%d) %s", var6 + 1, var2[var7]);
+            var2[var7] = "x";
+            ++var6;
+         }
+      } while(var6 < 4);
+
+      var1.close();
+   }
+}
