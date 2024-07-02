@@ -47,53 +47,8 @@ public class App {
                 
                     int opc;
                     boolean ok = false;
-                
-                    do { 
-                        System.out.printf("Introduzca la posicion >> ");
-                        opc = sc.nextInt();
                     
-                        if(numbers[opc - 1] == 0) {
-                            numbers[opc - 1] = 1;
-                            ok = true;
-                        } else {
-                            System.out.println("Posicion ocupada");
-                        }
-                    } while(!ok);
-                
-                    if(checkMyVictory()) {
-                        clearConsole();
-                        printBoard();
-                        System.out.printf("\n\nHas ganado\n");
-                        b = true;
-                    } else {
-                        clearConsole();
-                        iaTurn();
-                        if(checkIAVictory()) {
-                            clearConsole();
-                            printBoard();
-                            System.out.printf("\n\nHas perdido\n");
-                            b = true;
-                        }
-                    }
-                } while (!b);
-            break;
-        
-            case 1:
-                do {
-                    int opc;
-                    boolean ok = false;
-
-                    clearConsole();
-                    iaTurn();
-
-                    if(checkIAVictory()) {
-                        clearConsole();
-                        printBoard();
-                        System.out.printf("\n\nHas perdido\n");
-                        b = true;
-                    } else {
-                        printBoard();
-
+                    if(isDraw()) {
                         do { 
                             System.out.printf("Introduzca la posicion >> ");
                             opc = sc.nextInt();
@@ -105,17 +60,93 @@ public class App {
                                 System.out.println("Posicion ocupada");
                             }
                         } while(!ok);
-
+                    
                         if(checkMyVictory()) {
                             clearConsole();
                             printBoard();
                             System.out.printf("\n\nHas ganado\n");
                             b = true;
+                        } else {
+                            clearConsole();
+                            if(isDraw()) {
+                                iaTurn();
+                                if(checkIAVictory()) {
+                                    clearConsole();
+                                    printBoard();
+                                    System.out.printf("\n\nHas perdido\n");
+                                    b = true;
+                                }
+                            } else {
+                                System.out.printf("\n\nEmpate\n");
+                                b = true;
+                            }
                         }
+                    } else {
+                        System.out.printf("\n\nEmpate\n");
+                        b = true;
                     }
                 } while (!b);
             break;
+        
+            case 1:
+                do {
+                    int opc;
+                    boolean ok = false;
+
+                    clearConsole();
+                    if(isDraw()) {
+                        iaTurn();
+
+                        if(checkIAVictory()) {
+                            clearConsole();
+                            printBoard();
+                            System.out.printf("\n\nHas perdido\n");
+                            b = true;
+                        } else {
+                            printBoard();
+                            if(isDraw()) {
+                                do { 
+                                    System.out.printf("Introduzca la posicion >> ");
+                                    opc = sc.nextInt();
+                                
+                                    if(numbers[opc - 1] == 0) {
+                                        numbers[opc - 1] = 1;
+                                        ok = true;
+                                    } else {
+                                        System.out.println("Posicion ocupada");
+                                    }
+                                } while(!ok);
+        
+                                if(checkMyVictory()) {
+                                    clearConsole();
+                                    printBoard();
+                                    System.out.printf("\n\nHas ganado\n");
+                                    b = true;
+                                }
+                            } else {
+                                System.out.printf("\n\nEmpate\n");
+                                b = true;
+                            }
+                        }
+                    } else {
+                        System.out.printf("\n\nEmpate\n");
+                        b = true;
+                    }
+                    
+                } while (!b);
+            break;
         }
+    }
+
+    public static boolean isDraw() {
+        boolean draw = false;
+        for (int i = 0; i < numbers.length; i++) {
+            if(numbers[i] == 0) {
+                draw = true;
+            } 
+        }
+
+        return draw;
     }
 
     public static void restetNumbers() {
